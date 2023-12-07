@@ -1,0 +1,35 @@
+{
+  "name": "typescript-transformer-remove-decorators",
+  "version": "1.0.6",
+  "description": "A transformer to use with TypeScript compiler APIs that removes unnecessary decorators. It's particularly useful when sharing code between backend and frontend, preventing backend-specific decorators from appearing in the frontend bundle.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "publish": "npm run build"
+  },
+  "keywords": [
+    "typescript",
+    "remove",
+    "decorator",
+    "ignore",
+    "transformer"
+  ],
+  "files": [
+    "/dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/soknaly/typescript-remove-decorators-transformer.git"
+  },
+  "author": "Sokna Ly",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.2"
+  }
+}
