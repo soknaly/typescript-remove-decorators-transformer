@@ -1,0 +1,28 @@
+on:
+    release:
+      types: [published]
+name: release 
+jobs:
+    build_test_and_publish:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+  
+        - name: install node
+          uses: actions/setup-node@v3
+          with:
+            node-version: 16
+            registry-url: https://registry.npmjs.org/
+  
+        - name: install
+          run: npm install
+  
+        - name: build
+          run: npm build
+  
+        - name: test
+          run: npm test
+  
+        - run: npm publish
+          env:
+            NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}

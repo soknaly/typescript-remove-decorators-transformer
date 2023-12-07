@@ -1,5 +1,7 @@
 # TypeScript Transformer Library
 
+[![build and test](https://github.com/soknaly/typescript-remove-decorators-transformer/actions/workflows/push.yml/badge.svg)](https://github.com/soknaly/typescript-remove-decorators-transformer/actions/workflows/push.yml)
+
 <br />
 <p align="center">
   <h3 align="center">typescript-remove-decorators-transformer</h3>
@@ -28,13 +30,13 @@
 
 ### Installation
 ```bash
-yarn add ts-loader --dev
+yarn add typescript-remove-decorators-transformer --dev
 ```
 
 or
 
 ```bash
-npm install ts-loader --save-dev
+npm install typescript-remove-decorators-transformer --save-dev
 ```
 
 
@@ -54,7 +56,11 @@ const result = program.emit(
   undefined,
   false,
   {
-    before: [removeDecoratorsTransformer(program)]
+    before: [removeDecoratorsTransformer([
+      'Column',
+      'Index',
+      // decorators to remove
+    ])]
   },
 );
 ```
