@@ -1,6 +1,6 @@
 {
   "name": "typescript-remove-decorators-transformer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A transformer to use with TypeScript compiler APIs that removes unnecessary decorators. It's particularly useful when sharing code between backend and frontend, preventing backend-specific decorators from appearing in the frontend bundle.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
