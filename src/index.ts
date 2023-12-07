@@ -24,8 +24,12 @@ const removeDecorators = (decorators: string[]): ts.TransformerFactory<ts.Source
             }
             if (ts.isDecorator(node)) {
                 const decorator = node as ts.Decorator;
-                const identifier = decorator.getChildAt(1) as ts.Identifier;
-                const decoratorName = identifier.getText();
+                let identifier = decorator.getChildAt(1);
+                // Unexpected behavior (in windows am not sure yet). identifer supposed to be a Identifier but it is a CallExpression
+                if (ts.isCallExpression(identifier)) {
+                    identifier = identifier.expression as ts.Identifier;
+                }
+                let decoratorName = identifier.getText();
                 if (decorators.includes(decoratorName)) {
                     return undefined;
                 }
